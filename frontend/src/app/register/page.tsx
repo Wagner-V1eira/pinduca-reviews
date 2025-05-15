@@ -67,20 +67,20 @@ const RegisterPage: React.FC = () => {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen bg-gray-100">
-            <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-md w-full relative">
-                <button onClick={handleClose} className="absolute top-2 right-2 text-gray-600 hover:text-gray-700 cursor-pointer">
+        <div className="flex justify-center items-center h-screen bg-gray-600">
+            <div className="bg-gray-800 shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-md w-full relative">
+                <button onClick={handleClose} className="absolute top-3 right-3 text-gray-400 hover:text-gray-200 cursor-pointer">
                     <FaTimes className="h-6 w-6" />
                 </button>
-                <h2 className="block text-gray-600 text-center text-2xl font-bold mb-6">Cadastro</h2>
+                <h2 className="block text-gray-200 text-center text-2xl font-bold mb-6">Cadastro</h2>
                 {erro && <p className="text-orange-500 text-sm mb-4">{erro}</p>}
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
-                        <label className="block text-gray-600 text-sm font-bold mb-2" htmlFor="nome">
+                        <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor="nome">
                             Nome
                         </label>
                         <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-orange-400 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                             id="nome"
                             type="text"
                             placeholder="Nome completo"
@@ -90,11 +90,11 @@ const RegisterPage: React.FC = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-600 text-sm font-bold mb-2" htmlFor="email">
+                        <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor="email">
                             Email
                         </label>
                         <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-orange-400 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                             id="email"
                             type="email"
                             placeholder="Email"
@@ -104,11 +104,11 @@ const RegisterPage: React.FC = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-600 text-sm font-bold mb-2" htmlFor="senha">
+                        <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor="senha">
                             Senha
                         </label>
                         <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-orange-400 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                             id="senha"
                             type="password"
                             placeholder="Senha"
@@ -118,11 +118,11 @@ const RegisterPage: React.FC = () => {
                         />
                     </div>
                     <div className="mb-6">
-                        <label className="block text-gray-600 text-sm font-bold mb-2" htmlFor="confirmarSenha">
+                        <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor="confirmarSenha">
                             Confirmar Senha
                         </label>
                         <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-orange-400 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                             id="confirmarSenha"
                             type="password"
                             placeholder="Confirmar Senha"
@@ -131,16 +131,13 @@ const RegisterPage: React.FC = () => {
                             required
                         />
                     </div>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-center">
                         <button
-                            className="bg-orange-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             type="submit"
                         >
                             Cadastrar
                         </button>
-                        <a className="inline-block align-baseline font-bold text-sm text-gray-600 hover:text-orange-800" href="/login">
-                            Já tem conta?
-                        </a>
                     </div>
                 </form>
             </div>

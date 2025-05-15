@@ -9,7 +9,7 @@ import { ComentarioComNota } from '@/types';
 
 const DisplayEstrelas: React.FC<{ nota: number | null | undefined }> = ({ nota }) => {
   if (nota === null || nota === undefined || typeof nota !== 'number' || nota < 1 || nota > 5) {
-    return <span className="text-xs text-gray-500 italic">(Sem avaliação registrada)</span>;
+    return <span className="text-xs text-gray-200 italic">(Sem avaliação registrada)</span>;
   }
   const notaArredondada = Math.round(nota); 
   return (
@@ -149,9 +149,9 @@ const ListaComentarios: React.FC<ListaComentariosProps> = ({
     }
   };
 
-  if (isLoading) { return <p className="text-center text-gray-500 py-4">Carregando comentários...</p>; }
+  if (isLoading) { return <p className="text-center text-gray-200 py-4">Carregando comentários...</p>; }
   if (erro) { return <p className="text-red-500 text-sm text-center py-4">{erro}</p>; }
-  if (comentarios.length === 0) { return <p className="text-center text-gray-500 py-4">Ainda não há comentários para este gibi.</p>; }
+  if (comentarios.length === 0) { return <p className="text-center text-gray-200 py-4">Ainda não há comentários para este gibi.</p>; }
 
   return (
     <div className="mt-8 space-y-5">
@@ -167,7 +167,7 @@ const ListaComentarios: React.FC<ListaComentariosProps> = ({
         const isProcessing = isDeletingThis || isSavingThis; 
 
         return (
-          <div key={comentario.id} className={`p-4 rounded-lg shadow border transition-opacity duration-300 ${isProcessing ? 'opacity-50' : ''} ${isEditingThis ? 'bg-orange-50 dark:bg-gray-700 border-orange-300 dark:border-orange-700' : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700'}`}>
+          <div key={comentario.id} className={`p-4 rounded-lg shadow border transition-opacity duration-300 ${isProcessing ? 'opacity-50' : ''} ${isEditingThis ? 'bg-orange-50 dark:bg-gray-700 border-orange-300 dark:border-orange-700' : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-500'}`}>
 
             <div className="flex items-center justify-between mb-1 flex-wrap gap-x-2">
               <p className="font-semibold text-gray-900 dark:text-gray-100 mr-2">

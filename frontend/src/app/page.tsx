@@ -62,8 +62,8 @@ export default function HomePage() {
   const handleCardClick = (id: number) => { router.push(`gibi/${id}`); };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-gray-700">
+    <div className="container mx-auto px-4 py-8 ">
+      <h1 className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-gray-200">
         Catálogo de Gibis
       </h1>
 
@@ -73,7 +73,7 @@ export default function HomePage() {
               placeholder="Buscar por Título, Autor ou Ano..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-600 dark:border-gray-600 dark:text-white"
+              className="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-500 focus:border-gray-300 dark:bg-gray-600 dark:border-gray-600 dark:text-white"
           />
           <button
               type="submit"
@@ -84,11 +84,11 @@ export default function HomePage() {
       </form>
 
       {isLoading ? (
-        <p className="text-center text-gray-500 dark:text-gray-400 py-10">Carregando gibis...</p>
+        <p className="text-center text-gray-500 dark:text-gray-200 py-10">Carregando gibis...</p>
       ) : error ? (
         <p className="text-center text-red-500 py-10">Erro: {error}</p>
       ) : gibis.length === 0 ? (
-        <p className="text-center text-gray-500 dark:text-gray-400 py-10">
+        <p className="text-center text-gray-500 dark:text-gray-200 py-10">
           Nenhum gibi encontrado com os filtros aplicados.
         </p>
       ) : (

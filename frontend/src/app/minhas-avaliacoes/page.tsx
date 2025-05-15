@@ -72,15 +72,15 @@ export default function MinhasAvaliacoesPage() {
   };
 
   if (isLoadingAuth) {
-    return <div className="container mx-auto p-8 text-center text-gray-500">Verificando autenticação...</div>;
+    return <div className="container mx-auto p-8 text-center text-gray-200">Verificando autenticação...</div>;
   }
 
   if (!isLoggedIn) {
-     return <div className="container mx-auto p-8 text-center text-gray-500">Acesso negado. Redirecionando...</div>;
+     return <div className="container mx-auto p-8 text-center text-gray-200">Acesso negado. Redirecionando...</div>;
   }
 
   if (isLoadingData) {
-     return <div className="container mx-auto p-8 text-center text-gray-500">Carregando suas avaliações...</div>;
+     return <div className="container mx-auto p-8 text-center text-gray-200">Carregando suas avaliações...</div>;
   }
 
   if (error) {
@@ -89,12 +89,12 @@ export default function MinhasAvaliacoesPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8 text-center text-gray-600 dark:text-gray-600">
+      <h1 className="text-3xl font-bold mb-8 text-center text-gray-600 dark:text-gray-200">
         Gibis Avaliados e Comentados
       </h1>
 
       {meusGibis.length === 0 ? (
-        <p className="text-center text-gray-600 dark:text-gray-600">
+        <p className="text-center text-gray-600 dark:text-gray-200">
           Você ainda não contribuiu com nenhuma avaliação ou comentário.
         </p>
       ) : (

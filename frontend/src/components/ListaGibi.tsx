@@ -21,7 +21,7 @@ const ListaGibi: React.FC<ListaGibiProps> = ({ gibis }) => {
  
   if (!gibis || gibis.length === 0) {
     return (
-      <p className="text-center text-gray-500 dark:text-gray-400 mt-10">
+      <p className="text-center text-gray-500 dark:text-gray-200 mt-10">
         Nenhum gibi encontrado para exibir.
       </p>
     );

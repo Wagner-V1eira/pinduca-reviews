@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body>
+      <body className="bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-200">
         <AuthProvider>
           <LayoutClientWrapper>
             <main>{children}</main>

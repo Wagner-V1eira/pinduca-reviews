@@ -68,8 +68,8 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-50">
-            <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-500">
+            <div className="bg-gray-800 rounded-lg shadow-xl p-8 max-w-md w-full relative">
                 <button
                     onClick={() => {
                         onClose(); 
@@ -79,26 +79,26 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
                 >
                     <FaTimes className="h-6 w-6" />
                 </button>
-                <h2 className="text-2xl font-bold mb-4 text-gray-600">Entrar</h2>
-                <p className="text-gray-600 mb-6">Entre com seu email e senha para acessar sua conta</p>
+                <h2 className="text-2xl font-bold mb-4 text-gray-300">Entrar</h2>
+                <p className="text-gray-300 mb-6">Entre com seu email e senha para acessar sua conta</p>
                 {errorMessage && <p className="text-red-500 mb-4">{errorMessage}</p>}
                 <div className="mb-4">
-                    <label htmlFor="email" className="block text-gray-500 text-sm font-bold mb-2">Email</label>
+                    <label htmlFor="email" className="block text-gray-300 text-sm font-bold mb-2">Email</label>
                     <input
                         type="email"
                         id="email"
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-orange-400 leading-tight focus:outline-none focus:shadow-outline"
                         placeholder="seu@email.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)} disabled={isLoading}
                     />
                 </div>
                 <div className="mb-6">
-                    <label htmlFor="senha" className="block text-gray-600 text-sm font-bold mb-2">Senha</label>
+                    <label htmlFor="senha" className="block text-gray-300 text-sm font-bold mb-2">Senha</label>
                     <input
                         type="password"
                         id="senha"
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-orange-400 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                         placeholder="********"
                         value={senha}
                         onChange={(e) => setSenha(e.target.value)} disabled={isLoading}
@@ -106,7 +106,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
                 </div>
                 <div className="flex items-center justify-center">
                     <button
-                        className="bg-orange-400 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        className="bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         type="button"
                         onClick={handleLogin}
                     >
@@ -114,10 +114,10 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
                     </button>
                 </div>
                 <div className="flex flex-col items-center mt-6">
-                    <a href="/forgot-password" className="inline-block align-baseline font-bold text-sm text-orange-400 hover:text-gray-600">
+                    <a href="/esqueci-senha" onClick={onClose} className="inline-block align-baseline font-bold text-sm text-orange-400 hover:text-orange-600">
                         Esqueci minha senha
                     </a>
-                    <a href="/register" className="inline-block align-baseline font-bold text-sm text-orange-400 hover:text-gray-600 mt-2">
+                    <a href="/register" className="inline-block align-baseline font-bold text-sm text-orange-400 hover:text-orange-600 mt-2">
                         Não tem uma conta? Cadastre-se
                     </a>
                 </div>

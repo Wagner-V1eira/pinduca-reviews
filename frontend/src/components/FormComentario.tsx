@@ -75,7 +75,7 @@ const FormComentario: React.FC<FormComentarioProps> = ({ gibiId, onCommentAdded 
   };
 
   if (!isLoggedIn) {
-    return <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">Você precisa estar logado para comentar.</p>;
+    return <p className="text-sm text-gray-600 dark:text-gray-200 mt-4">Você precisa estar logado para comentar.</p>;
   }
 
   return (
@@ -86,13 +86,13 @@ const FormComentario: React.FC<FormComentarioProps> = ({ gibiId, onCommentAdded 
           onChange={(e) => setConteudo(e.target.value)}
           placeholder="Escreva seu comentário..."
           rows={4}
-          className="w-full p-3 border rounded-lg shadow-sm focus:ring focus:ring-orange-200 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400"
+          className="w-full p-3 border rounded-lg shadow-sm focus:ring focus:ring-orange-400 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400"
           required
           disabled={isSubmitting}
         />
         <button
           type="submit"
-          className="mt-2 bg-orange-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-50"
+          className="mt-2 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-50"
           disabled={isSubmitting}
         >
           {isSubmitting ? 'Enviando...' : 'Enviar Comentário'}

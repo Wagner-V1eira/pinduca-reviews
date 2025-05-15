@@ -96,40 +96,38 @@ export default function AdicionarGibiPage() {
     }
   };
 
-  // Renderização enquanto verifica auth
   if (isLoadingAuth || !isLoggedIn) {
       return <div className="container mx-auto p-8 text-center">Carregando...</div>;
   }
 
-  // Renderização do formulário
   return (
     <div className="container mx-auto px-4 py-8 max-w-2xl">
-      <h1 className="text-3xl font-bold mb-6 text-center text-gray-600">Cadastrar Novo Gibi</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center text-gray-200">Cadastrar Novo Gibi</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         {formError && <p className="text-red-500 text-sm text-center">{formError}</p>}
 
         <div>
-          <label htmlFor="titulo" className="block text-sm font-medium text-gray-700 dark:text-gray-600">Título</label>
+          <label htmlFor="titulo" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Título</label>
           <input type="text" name="titulo" id="titulo" required minLength={3} value={formData.titulo} onChange={handleChange} disabled={isSubmitting} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
         </div>
 
         <div>
-          <label htmlFor="ano" className="block text-sm font-medium text-gray-700 dark:text-gray-600">Ano de Publicação</label>
+          <label htmlFor="ano" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Ano de Publicação</label>
           <input type="number" name="ano" id="ano" required value={formData.ano} onChange={handleChange} disabled={isSubmitting} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
         </div>
 
         <div>
-          <label htmlFor="capaUrl" className="block text-sm font-medium text-gray-700 dark:text-gray-600">URL da Capa (Opcional)</label>
+          <label htmlFor="capaUrl" className="block text-sm font-medium text-gray-700 dark:text-gray-200">URL da Capa (Opcional)</label>
           <input type="url" name="capaUrl" id="capaUrl" value={formData.capaUrl} onChange={handleChange} disabled={isSubmitting} placeholder="https://exemplo.com/capa.jpg" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
         </div>
 
         <div>
-          <label htmlFor="autor" className="block text-sm font-medium text-gray-700 dark:text-gray-600">Autor (Opcional)</label>
+          <label htmlFor="autor" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Autor (Opcional)</label>
           <input type="text" name="autor" id="autor" value={formData.autor} onChange={handleChange} disabled={isSubmitting} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
         </div>
 
         <div>
-          <label htmlFor="sinopse" className="block text-sm font-medium text-gray-700 dark:text-gray-600">Sinopse (Opcional)</label>
+          <label htmlFor="sinopse" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Sinopse (Opcional)</label>
           <textarea name="sinopse" id="sinopse" rows={4} value={formData.sinopse} onChange={handleChange} disabled={isSubmitting} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
         </div>
 

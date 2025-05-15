@@ -55,8 +55,7 @@ const EstrelasAvaliacao: React.FC<EstrelasAvaliacaoProps> = ({ gibiId, onRatingA
       }
 
       const data = await response.json();
-      console.log('Avaliação enviada com sucesso!', data);
-      toast.success('Avaliação enviada com sucesso!');
+      toast.success('Avaliação enviada com sucesso!', data);
       toast.success('Avaliação processada!');
       if (onRatingAdded) {
         onRatingAdded();
@@ -92,7 +91,7 @@ const EstrelasAvaliacao: React.FC<EstrelasAvaliacaoProps> = ({ gibiId, onRatingA
           );
         })}
       </div>
-       {!isLoggedIn && <p className="text-xs text-gray-500 mt-1">Faça login para avaliar.</p>}
+       {!isLoggedIn && <p className="text-xs text-gray-200 mt-1">Faça login para avaliar.</p>}
     </div>
   );
 };

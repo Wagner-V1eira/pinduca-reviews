@@ -145,7 +145,7 @@ const GibiDetailsPage: React.FC = () => {
 
         <div className="w-full md:w-2/3 lg:w-3/4">
           <div className="flex justify-between items-start mb-2 flex-wrap gap-2">
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-600">{gibi.titulo}</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-200">{gibi.titulo}</h1>
             {(isOwner || isAdmin) && (
               <div className="flex items-center space-x-3 flex-shrink-0">
                 <Link href={`/gibi/${gibi.id}/editar`} className="flex items-center p-2 text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300" title="Alterar este Gibi" aria-disabled={isDeleting} onClick={(e: React.MouseEvent) => { if (isDeleting) e.preventDefault(); }}>
@@ -158,25 +158,25 @@ const GibiDetailsPage: React.FC = () => {
             )}
           </div>
 
-          <p className="text-lg text-gray-600 dark:text-gray-600 mb-4">Ano: {gibi.ano}</p>
-          {gibi.autor && <p className="text-md text-gray-700 dark:text-gray-600 mb-4">Autor: {gibi.autor}</p>} 
-          <p className="text-base text-gray-800 dark:text-gray-600 mb-6 leading-relaxed">
+          <p className="text-lg text-gray-600 dark:text-gray-200 mb-4">Ano: {gibi.ano}</p>
+          {gibi.autor && <p className="text-md text-gray-700 dark:text-gray-200 mb-4">Autor: {gibi.autor}</p>} 
+          <p className="text-base text-gray-800 dark:text-gray-200 mb-6 leading-relaxed">
             {gibi.sinopse || 'Sinopse não disponível.'}
           </p>
 
-          <div className='mb-6 border-t pt-4 border-gray-400 dark:border-gray-700'>
-             <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-600">Avalie com Estrelas</h2>
+          <div className='mb-6 border-t pt-4 border-gray-400 dark:border-gray-200'>
+             <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Avalie com Estrelas</h2>
              <EstrelasAvaliacao gibiId={gibi.id} onRatingAdded={handleAcaoConcluida} />
           </div>
           <div className='mb-10 border-t pt-4 border-gray-200 dark:border-gray-700'>
-             <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-600">Deixe seu Comentário</h2>
+             <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Deixe seu Comentário</h2>
              <FormComentario gibiId={gibi.id} onCommentAdded={handleAcaoConcluida} />
           </div>
         </div>
       </div>
       <hr className="my-8 border-gray-300 dark:border-gray-700"/>
       <div>
-        <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-600">Comentários e Avaliações</h2>
+        <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-200">Comentários e Avaliações</h2>
         <ListaComentarios
             gibiId={gibi.id}
             key={refreshKey}

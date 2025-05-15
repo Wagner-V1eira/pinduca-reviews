@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenLoginModal }) => {
   };
 
   return (
-    <nav className="bg-orange-400 dark:bg-gray-600 py-4 shadow-md">
+    <nav className="sticky top-0 z-50 w-full bg-orange-400 dark:bg-gray-600 py-4 shadow-md">
       <div className="container mx-auto flex items-center justify-between px-4">
         <div className="flex items-center space-x-4">
           <Image src={logo} width={40} height={40} alt="Logo Pinduca" className="rounded-full" priority />
