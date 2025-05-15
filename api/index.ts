@@ -6,6 +6,7 @@ import routesNota from './routes/nota';
 import routesUsuario from './routes/usuario';
 import routesComentario from './routes/comentario';
 import routesLogin from './routes/login'; 
+import authRouter from './routes/auth';
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use("/api/nota", routesNota);
 app.use("/api/usuario", routesUsuario);
 app.use("/api/comentario", routesComentario);
 app.use("/api/login", routesLogin);
+app.use("/api/auth", authRouter);
 
 app.get('/api', (req, res) => {
   res.status(200).json({ message: 'API Pinduca Reviews está operacional!' });
