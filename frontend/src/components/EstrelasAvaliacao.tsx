@@ -27,7 +27,7 @@ const EstrelasAvaliacao: React.FC<EstrelasAvaliacaoProps> = ({ gibiId, onRatingA
     console.log('Enviando avaliação:', { gibiId, usuarioId: user.id, avaliacao: novaAvaliacao });
 
     try {
-      const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+      const baseUrl = process.env.NEXT_PUBLIC_URL_API;
       const apiUrl = `${baseUrl}/nota`;
       console.log('Enviando avaliação para:', apiUrl);
 
