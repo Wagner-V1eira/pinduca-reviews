@@ -2,11 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv'; 
 import routesGibi from './routes/gibi';
-import routesNota from './routes/nota';
 import routesUsuario from './routes/usuario';
-import routesComentario from './routes/comentario';
 import routesLogin from './routes/login'; 
 import authRouter from './routes/auth';
+import routesReview from './routes/review';
 
 dotenv.config();
 
@@ -22,9 +21,8 @@ app.use(cors({
 }));
 
 app.use("/api/gibi", routesGibi);
-app.use("/api/nota", routesNota);
 app.use("/api/usuario", routesUsuario);
-app.use("/api/comentario", routesComentario);
+app.use("/api/review", routesReview);
 app.use("/api/login", routesLogin);
 app.use("/api/auth", authRouter);
 

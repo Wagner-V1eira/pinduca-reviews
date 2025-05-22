@@ -13,76 +13,64 @@ enum Role {
 }
 
 model Usuario {
-  id                            Int           @id @default(autoincrement())
-  nome                          String        @db.VarChar(255)
-  email                         String        @unique
-  senha                         String        @db.VarChar(255)
-  role                          Role          @default(USER)
-  createdAt                     DateTime      @default(now())
-  updatedAt                     DateTime      @updatedAt
-  codRecuperaSenha              String?       @unique
-  codRecuperaSenhaExpiracao     DateTime?
-  comentarios Comentario[]
-  notas       Nota[]          
-  gibis       Gibi[]
-  logs        Log[]    
-  @@map("usuarios")       
+  id                          Int       @id @default(autoincrement())
+  nome                        String    @db.VarChar(255)
+  email                       String    @unique
+  senha                       String    @db.VarChar(255)
+  role                        Role      @default(USER)
+  createdAt                   DateTime  @default(now())
+  updatedAt                   DateTime  @updatedAt
+  codRecuperaSenha            String?   @unique
+  codRecuperaSenhaExpiracao   DateTime?
+  gibis                       Gibi[]    
+  reviews                     Review[]  
+  logs                        Log[]
+  @@map("usuarios")
 }
 
 model Gibi {
-  id         Int            @id @default(autoincrement())
-  titulo     String         @db.VarChar(255)
-  ano        Int            @db.Integer
-  sinopse    String?        @db.Text
-  capaUrl    String?
-  autor      String?        @db.VarChar(255)
-  excluido   Boolean        @default(false)
-  createdAt  DateTime       @default(now())
-  updatedAt  DateTime       @updatedAt
-  usuarioId  Int
-  usuario    Usuario        @relation(fields: [usuarioId], references: [id])
-  comentarios Comentario[]
-  notas      Nota[]
-  logs       Log[]
+  id          Int       @id @default(autoincrement())
+  titulo      String    @db.VarChar(255)
+  ano         Int       @db.Integer
+  sinopse     String?   @db.Text
+  capaUrl     String?
+  autor       String?   @db.VarChar(255)
+  excluido    Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  usuarioId   Int      
+  usuario     Usuario   @relation(fields: [usuarioId], references: [id])
+  reviews     Review[] 
+  logs        Log[]
   @@index([excluido])
   @@map("gibis")
 }
 
-model Comentario {
-  id        Int          @id @default(autoincrement())
-  conteudo  String       @db.Text
-  createdAt DateTime     @default(now())
-  updatedAt DateTime     @updatedAt
-  gibiId    Int
-  gibi      Gibi         @relation(fields: [gibiId], references: [id])
-  usuarioId Int
-  usuario   Usuario      @relation(fields: [usuarioId], references: [id])
-  logs      Log[]
-  @@map("comentarios")
-}
+model Review {
+  id          Int      @id @default(autoincrement())
+  gibiId      Int
+  gibi        Gibi     @relation(fields: [gibiId], references: [id], onDelete: Cascade)
+  usuarioId   Int
+  usuario     Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade) 
+  avaliacao   Int      
+  conteudo    String  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  logs         Log[] 
 
-model Nota {
-  id        Int          @id @default(autoincrement())
-  avaliacao Int          @default(0) 
-  createdAt DateTime     @default(now())
-  updatedAt DateTime     @updatedAt
-  gibiId    Int
-  gibi      Gibi         @relation(fields: [gibiId], references: [id])
-  usuarioId Int
-  usuario   Usuario      @relation(fields: [usuarioId], references: [id])
-  @@unique([gibiId, usuarioId])
-  @@map("notas")
+  @@unique([gibiId, usuarioId]) 
+  @@map("reviews") 
 }
 
 model Log {
-  id            Int           @id @default(autoincrement())
-  acao          String
-  createdAt     DateTime      @default(now())
-  usuarioId     Int
-  usuario       Usuario       @relation(fields: [usuarioId], references: [id])
-  gibiId        Int?
-  gibi          Gibi?         @relation(fields: [gibiId], references: [id])
-  comentarioId  Int?
-  comentario    Comentario?  @relation(fields: [comentarioId], references: [id])
+  id          Int       @id @default(autoincrement())
+  acao        String
+  createdAt   DateTime  @default(now())
+  usuarioId   Int
+  usuario     Usuario   @relation(fields: [usuarioId], references: [id])
+  gibiId      Int?
+  gibi        Gibi?     @relation(fields: [gibiId], references: [id])
+  reviewId    Int?      
+  review      Review?   @relation(fields: [reviewId], references: [id]) 
   @@map("logs")
 }
