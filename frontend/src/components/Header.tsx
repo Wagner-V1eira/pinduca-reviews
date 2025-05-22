@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenLoginModal }) => {
             <FaHome /> <span>Início</span>
           </Link>
           <button onClick={handleMinhasAvaliacoesClick} className="text-white hover:text-orange-400 flex items-center space-x-2 cursor-pointer">
-            <FaStar /> <span>Minhas Avaliações</span>
+            <FaStar /> <span>Meus Reviews</span>
           </button>
         </div>
 

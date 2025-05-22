@@ -95,7 +95,7 @@ export default function MinhasAvaliacoesPage() {
 
       {meusGibis.length === 0 ? (
         <p className="text-center text-gray-600 dark:text-gray-200">
-          Você ainda não contribuiu com nenhuma avaliação ou comentário.
+          Você ainda não contribuiu com nenhum review.
         </p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
